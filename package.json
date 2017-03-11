@@ -1,0 +1,19 @@
+{
+  "name": "mongomongo",
+  "version": "1.0.0",
+  "description": "REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selenzo/mongomongo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selenzo/mongomongo/issues"
+  },
+  "homepage": "https://github.com/selenzo/mongomongo#readme"
+}
