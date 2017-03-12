@@ -1,5 +1,4 @@
 /*jshint -W117*/
-
 var express = require('express'),
     router = express.Router();
 

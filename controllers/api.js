@@ -1,10 +1,10 @@
 /*jshint -W117*/
-
 var express = require('express'),
     router = express.Router();
 
 router.get('/', function (req, res) {
     res.set({
+//TODO: set params
         'Content-Type': 'application/json',
 //        'Content-Length': jsonTestData.length,
 //        'Last-Modified': new Date(),
