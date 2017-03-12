@@ -1,10 +1,11 @@
 /*jshint -W117*/
 
-var http = require('http'),
-    router = require('./src/router');
+var express = require('express'),
+    app = express();
 
-http.createServer(router.Route).listen(8080, httpServerStart);
+app.use(express.static(__dirname + '/public'));
+app.use(require('./controllers'));
 
-function httpServerStart() {
-    console.info("Server startded");
-}
+app.listen(3000, function () {
+    console.info("Its alive!");
+});
