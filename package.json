@@ -23,6 +23,7 @@
   "devDependencies": {
     "gulp-jshint": "^2.0.4",
     "gulp-nodemon": "^2.2.1",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
   }
 }

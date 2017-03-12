@@ -1,5 +1,6 @@
 /* jshint -W117*/
 var assert = require('assert'),
+    request = require('supertest'),
     http = require('http');
 
 describe('MongoMongo tests', function () {
@@ -7,17 +8,25 @@ describe('MongoMongo tests', function () {
 
     describe('WebServer Started', function () {
         it('Should return 200', function (done) {
-            http.get('http://localhost:8080', function (res) {
-                assert.equal(200, res.statusCode);
-                done();
-            });
+            request('http://localhost:3000')
+                .get('/')
+                .expect(200, done);
         });
         it('Should return 404', function (done) {
-            http.get('http://localhost:8080/wtf', function (res) {
-                assert.equal(404, res.statusCode);
-                done();
-            });
+            request('http://localhost:3000/wtf')
+                .get('/')
+                .expect(404, done);
         });
     });
-
+    describe('WebServer Api', function () {
+        it('Status ok', function (done) {
+            request('http://localhost:3000/api')
+                .get('/')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, {
+                    status: 'ok'
+                }, done);
+        });
+    });
 });
