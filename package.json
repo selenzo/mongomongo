@@ -4,6 +4,10 @@
   "description": "REST API",
   "main": "server.js",
   "scripts": {
+    "db": "start mongod --dbpath data --journal --storageEngine=mmapv1",
+    "db-close": "start mongo admin --eval \"db.shutdownServer();\"",
+    "prestart": "start mongod --dbpath data --journal --storageEngine=mmapv1",
+    "pretest": "start mongod --dbpath data --journal --storageEngine=mmapv1",
     "test": "mocha"
   },
   "repository": {
@@ -17,12 +21,12 @@
   },
   "homepage": "https://github.com/selenzo/mongomongo#readme",
   "dependencies": {
-    "express": "^4.15.2",
-    "gulp": "^3.9.1"
+    "express": "^4.15.2"
   },
   "devDependencies": {
-    "gulp-jshint": "^2.0.4",
+    "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
+    "jshint": "^2.9.4",
     "mocha": "^3.2.0",
     "supertest": "^3.0.0"
   }
