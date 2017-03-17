@@ -1,0 +1,8 @@
+app:
+    port: 3000
+db:
+    url: localhost
+    port: 27017
+    user: mongomongo
+    password: test
+    connectionString: mongodb://${db.user}:${db.password}@${db.url}:${db.port}/mongomongo
