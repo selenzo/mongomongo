@@ -1,11 +1,15 @@
 /*jshint -W117*/
+
 var express = require('express'),
-    app = express();
+    app = express(),
+    timeout = require('connect-timeout'),
+    config = require('config-yml');
 
 app.use(express.static(__dirname + '/public'));
+app.use(timeout('5s'));
+app.use(require('./controllers/db'));
 app.use(require('./controllers'));
 
-//TODO: change port
-app.listen(3000, function () {
+app.listen(config.app.port, function () {
     console.info("Its alive!");
 });
