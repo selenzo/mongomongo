@@ -9,7 +9,8 @@ var express = require('express'),
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(timeout(config.app.timeout));
-app.use(require('./controllers/db'));
+app.use(require('./controllers/system'));
+
 app.use(require('./controllers'));
 
 app.listen(config.app.port, function () {

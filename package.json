@@ -7,7 +7,7 @@
     "db": "start mongod --dbpath data --journal --storageEngine=mmapv1",
     "db-close": "start mongo admin --eval \"db.shutdownServer();\"",
     "pretest": "start mongod --dbpath data --journal --storageEngine=mmapv1",
-    "postinstall": "start mongo admin --eval \"use mongomongo; db.createUser({user: \"mongomongo\",pwd: \"test\",roles: [{role: \"readWrite\",db: \"mongomongo\"}]})\"",
+    "postinstall": "start mongo --eval \"use mongomongo; db.createUser({user: \"mongomongo\",pwd: \"test\",roles: [{role: \"readWrite\",db: \"mongomongo\"}]})\"",
     "test": "mocha"
   },
   "repository": {
