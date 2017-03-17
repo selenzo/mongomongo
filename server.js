@@ -6,7 +6,7 @@ var express = require('express'),
     config = require('config-yml');
 
 app.use(express.static(__dirname + '/public'));
-app.use(timeout('5s'));
+app.use(timeout(config.app.timeout));
 app.use(require('./controllers/db'));
 app.use(require('./controllers'));
 
