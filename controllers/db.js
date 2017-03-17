@@ -5,6 +5,8 @@ var express = require('express'),
     config = require('config-yml'),
     db = require('monk')(config.db.connectionString);
 
+console.log("Monk state: " + db._state);
+
 router.use(function (req, res, next) {
     req.db = db;
     next();
