@@ -7,12 +7,7 @@ var express = require('express'),
     config = require('config-yml'),
     DbStatus = "Disconnected";
 
-router.get('/sys', function (req, res) {
-    res.write("123");
-    res.end('system information');
-});
-
-setInterval(DbTestConnection, 5000);
+setInterval(DbTestConnection, 100000);
 
 Connect();
 module.exports = router;
