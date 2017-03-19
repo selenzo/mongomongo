@@ -24,6 +24,8 @@
     "body-parser": "^1.17.1",
     "config-yml": "^0.6.1",
     "connect-timeout": "^1.8.0",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.1",
     "express": "^4.15.2",
     "mongodb": "^2.2.24",
     "monk": "^4.0.0",
